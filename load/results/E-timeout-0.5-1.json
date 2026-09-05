@@ -1,0 +1,111 @@
+{
+  "exp": "E",
+  "mode": "timeout-0.5",
+  "params": {
+    "failRate": 0.5,
+    "policyId": 1,
+    "retryAfter": 2,
+    "startedAt": 1788524556733,
+    "countersBefore": {
+      "alerts_sent_total": 3416,
+      "alerts_suppressed_total": 2,
+      "alert_retry_total": 2720,
+      "alerts_detected_total": 11873,
+      "alerts_failed_total": 8457
+    },
+    "delayMs": 2000,
+    "duration": "60s",
+    "failMode": "timeout"
+  },
+  "k6": {
+    "durationMs": {
+      "avg": 22.30789010321798,
+      "p50": 10.5545,
+      "p95": 24.094049999999985,
+      "p99": 590.8754399999998,
+      "max": 1132.43
+    },
+    "requests": 3294,
+    "rps": 43.881100282221816,
+    "failedRate": 0,
+    "droppedIterations": 13,
+    "durationMs{expected_response:true}": {
+      "avg": 22.30789010321798,
+      "p50": 10.5545,
+      "p95": 24.094049999999985,
+      "p99": 590.8754399999998,
+      "max": 1132.43
+    },
+    "durationMs{phase:flood}": {
+      "avg": 23.15203714859437,
+      "p50": 10.902999999999999,
+      "p95": 24.66569999999997,
+      "p99": 613.6768,
+      "max": 1132.43
+    },
+    "durationMs{phase:probe}": {
+      "avg": 14.261846666666663,
+      "p50": 5.3985,
+      "p95": 15.632549999999956,
+      "p99": 337.1421499999999,
+      "max": 688.827
+    }
+  },
+  "appDelta": {
+    "alerts_detected_total": 2908,
+    "alerts_sent_total": 158,
+    "alerts_failed_total": 2573,
+    "alert_retry_total": 138,
+    "alerts_suppressed_total": 0,
+    "async_executor_queue_size": 169
+  },
+  "derived": {
+    "successRateBeforeRetry": 49.1,
+    "finalSuccessRate": 5.4,
+    "avgRetriesPerAlert": 0.05,
+    "finalFailed": 2573,
+    "duplicates": 0
+  },
+  "webhook": {
+    "total": 322,
+    "ok": 158,
+    "failed": 164,
+    "unique": 158,
+    "duplicates": 0,
+    "byOutcome": {
+      "slow": 0,
+      "close": 0,
+      "ok": 158,
+      "error500": 0,
+      "rate429": 0,
+      "timeout": 164
+    },
+    "dispatchDelayMs": {
+      "max": 69592,
+      "count": 158,
+      "avg": 35319.3,
+      "p50": 36949,
+      "p95": 65453,
+      "p99": 68894
+    }
+  },
+  "alertStatusDistribution": {
+    "FAILED": 1892,
+    "PENDING": 108
+  },
+  "alertsScanned": 2000,
+  "status": {
+    "detectionMode": "NORMAL",
+    "redisBreaker": {
+      "state": "CLOSED",
+      "forced": false
+    },
+    "fallbackPermitsAvailable": 8,
+    "executor": {
+      "active": 8,
+      "queueSize": 169,
+      "queueCapacity": 200,
+      "poolSize": 8
+    }
+  }
+}

@@ -1,0 +1,40 @@
+mysql: [Warning] Using a password on the command line interface can be insecure.
+fingerprint	since_utc
+smoke-fp-4	2026-09-04 09:42:48.053
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: error_events
+   partitions: NULL
+         type: range
+possible_keys: uk_ee_project_event,idx_ee_project_received,idx_ee_project_env_received,idx_ee_project_env_fp_received
+          key: idx_ee_project_env_fp_received
+      key_len: 339
+          ref: NULL
+         rows: 20
+     filtered: 100.00
+        Extra: Using where; Using index
+*************************** 1. row ***************************
+EXPLAIN: -> Aggregate: count(0)  (cost=6.46 rows=1) (actual time=1.11..1.11 rows=1 loops=1)
+    -> Filter: ((error_events.fingerprint = <cache>((@fp))) and (error_events.environment = 'PRODUCTION') and (error_events.project_id = 1) and (error_events.received_at >= <cache>((@since))))  (cost=4.46 rows=20) (actual time=0.0404..1.1 rows=20 loops=1)
+        -> Covering index range scan on error_events using idx_ee_project_env_fp_received over (project_id = 1 AND environment = 'PRODUCTION' AND fingerprint = 'smoke-fp-4' AND '2026-09-04 09:42:48.053' <= received_at)  (cost=4.46 rows=20) (actual time=0.0361..1.09 rows=20 loops=1)
+
+cnt
+20
+Variable_name	Value
+Handler_read_key	1
+Handler_read_next	20
+Handler_read_rnd_next	0
+Innodb_rows_read	5029700
+*************************** 1. row ***************************
+EXPLAIN: -> Aggregate: count(0)  (cost=2895 rows=1) (actual time=4.92..4.92 rows=1 loops=1)
+    -> Filter: ((error_events.fingerprint = 'seed-fp-3') and (error_events.environment = 'PRODUCTION') and (error_events.project_id = 1) and (error_events.received_at >= <cache>((@since24))))  (cost=1962 rows=9324) (actual time=0.0264..4.81 rows=4956 loops=1)
+        -> Covering index range scan on error_events using idx_ee_project_env_fp_received over (project_id = 1 AND environment = 'PRODUCTION' AND fingerprint = 'seed-fp-3' AND '2026-09-03 09:43:48.118' <= received_at)  (cost=1962 rows=9324) (actual time=0.0229..3.76 rows=4956 loops=1)
+
+cnt_24h
+4956
+Variable_name	Value
+Handler_read_key	1
+Handler_read_next	4956
+Handler_read_rnd_next	0
+Innodb_rows_read	5039612

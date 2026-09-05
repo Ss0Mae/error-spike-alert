@@ -1,0 +1,14 @@
+# gradle / java
+backend/.gradle/
+backend/build/
+backend/out/
+*.class
+# node
+node_modules/
+frontend/dist/
+# results 는 포트폴리오 증거라 커밋한다. 임시 백업만 제외
+load/results/*.bak
+.DS_Store
+.env
+.idea/
+*.iml

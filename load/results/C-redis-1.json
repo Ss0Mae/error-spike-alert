@@ -1,0 +1,69 @@
+{
+  "exp": "C",
+  "mode": "redis",
+  "params": {
+    "warmup": "30s",
+    "fpPool": 50,
+    "measure": "1m",
+    "policyId": 1,
+    "skipRamp": true
+  },
+  "k6": {
+    "durationMs": {
+      "avg": 4.647434536368682,
+      "p50": 3.713,
+      "p95": 6.3603999999999985,
+      "p99": 23.025599999999987,
+      "max": 228.965
+    },
+    "requests": 9005,
+    "rps": 100.03749323038896,
+    "failedRate": 0,
+    "droppedIterations": null,
+    "durationMs{phase:measure}": {
+      "avg": 4.4637645392434395,
+      "p50": 3.685,
+      "p95": 5.931,
+      "p99": 13.703,
+      "max": 228.965
+    },
+    "durationMs{phase:warmup}": {
+      "avg": 5.016947684105302,
+      "p50": 3.761,
+      "p95": 10.892,
+      "p99": 28.96,
+      "max": 109.42
+    },
+    "durationMs{expected_response:true}": {
+      "avg": 4.647434536368682,
+      "p50": 3.713,
+      "p95": 6.3603999999999985,
+      "p99": 23.025599999999987,
+      "max": 228.965
+    }
+  },
+  "failedByPhase": {
+    "http_req_failed{phase:measure}": 0
+  },
+  "app": {
+    "hikaricp_connections_pending": 0,
+    "hikaricp_connections_active": 0,
+    "async_executor_queue_size": 0,
+    "database_fallback_total": 59944,
+    "detection_skipped_total": 29926
+  },
+  "status": {
+    "fallbackPermitsAvailable": 8,
+    "executor": {
+      "active": 0,
+      "queueSize": 0,
+      "queueCapacity": 200,
+      "poolSize": 4
+    },
+    "detectionMode": "NORMAL",
+    "redisBreaker": {
+      "state": "CLOSED",
+      "forced": false
+    }
+  }
+}

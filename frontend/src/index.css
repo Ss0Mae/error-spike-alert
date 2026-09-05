@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  background-color: #eef1f4;
+}
+
+body {
+  @apply font-sans text-ink bg-paper antialiased;
+  font-variant-numeric: tabular-nums;
+  /* 계측 용지: 24px 격자를 아주 옅게 깐다 */
+  background-image:
+    linear-gradient(#e4e9ee 1px, transparent 1px),
+    linear-gradient(90deg, #e4e9ee 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+:focus-visible {
+  outline: 2px solid #2456e6;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-surface border border-rule rounded-[3px];
+  }
+  .panel-title {
+    @apply flex items-baseline justify-between gap-3 px-4 pt-3 pb-2 text-[15px] font-medium;
+  }
+  .btn {
+    @apply inline-flex items-center gap-1.5 h-8 px-3 rounded-[3px] border border-rule bg-surface text-[13px] font-medium text-ink hover:border-ink2 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply bg-cobalt border-cobalt text-white hover:bg-[#1b46c4] hover:border-[#1b46c4];
+  }
+  .btn-danger {
+    @apply text-critical border-critical hover:bg-critical hover:text-white;
+  }
+  .input {
+    @apply h-8 px-2 rounded-[3px] border border-rule bg-surface text-[13px] text-ink placeholder:text-ink3 focus:border-cobalt;
+  }
+  .label {
+    @apply block text-[12px] text-ink2 mb-1;
+  }
+  table.data {
+    @apply w-full text-[13px] border-collapse;
+  }
+  table.data th {
+    @apply text-left font-medium text-ink2 px-3 py-1.5 border-b border-rule whitespace-nowrap;
+  }
+  table.data td {
+    @apply px-3 py-1.5 border-b border-rule/70 align-top;
+  }
+  table.data th.num,
+  table.data td.num {
+    @apply text-right;
+  }
+}

@@ -1,0 +1,93 @@
+{
+ "exp": "C",
+ "mode": "full-9min",
+ "params": {
+  "measure": "5m",
+  "policyId": 1,
+  "skipRamp": false,
+  "warmup": "1m",
+  "fpPool": 50
+ },
+ "k6": {
+  "durationMs": {
+   "avg": 271.4662212545147,
+   "p50": 5.586,
+   "p95": 1590.4042499999998,
+   "p99": 2495.5956999999976,
+   "max": 3442.352
+  },
+  "requests": 132386,
+  "rps": 244.70769516458566,
+  "failedRate": 0.00032480775912860875,
+  "droppedIterations": 5619,
+  "durationMs{phase:measure}": {
+   "avg": 4.614322822572623,
+   "p50": 3.84,
+   "p95": 6.036,
+   "p99": 23.754,
+   "max": 275.043
+  },
+  "durationMs{phase:ramp1000}": {
+   "avg": 586.8200619362617,
+   "p50": 316.037,
+   "p95": 2088.079399999999,
+   "p99": 2934.1894199999997,
+   "max": 3442.352
+  },
+  "durationMs{expected_response:true}": {
+   "avg": 270.80146881965936,
+   "p50": 5.584,
+   "p95": 1585.8433999999993,
+   "p99": 2490.0194399999987,
+   "max": 3442.352
+  },
+  "durationMs{phase:ramp500}": {
+   "avg": 108.64999286945384,
+   "p50": 4.469,
+   "p95": 762.2429999999996,
+   "p99": 1214.3177999999998,
+   "max": 1770.173
+  },
+  "durationMs{phase:warmup}": {
+   "avg": 7.230947508748515,
+   "p50": 4.369,
+   "p95": 14.191,
+   "p99": 104.709,
+   "max": 231.466
+  },
+  "durationMs{phase:ramp200}": {
+   "avg": 28.320567794475867,
+   "p50": 2.861,
+   "p95": 71.14899999999999,
+   "p99": 858.5274999999998,
+   "max": 1174.55
+  }
+ },
+ "failedByPhase": {
+  "http_req_failed{phase:ramp1000}": 0.0007835419741613368,
+  "http_req_failed{phase:measure}": 0,
+  "http_req_failed{phase:ramp200}": 0,
+  "http_req_failed{phase:ramp500}": 0
+ },
+ "app": {
+  "hikaricp_connections_pending": 189,
+  "hikaricp_connections_active": 10,
+  "async_executor_queue_size": 0,
+  "database_fallback_total": 59944,
+  "detection_skipped_total": 29926
+ },
+ "status": {
+  "executor": {
+   "active": 0,
+   "queueSize": 0,
+   "queueCapacity": 200,
+   "poolSize": 4
+  },
+  "detectionMode": "NORMAL",
+  "redisBreaker": {
+   "state": "CLOSED",
+   "forced": false
+  },
+  "fallbackPermitsAvailable": 8
+ }
+}

@@ -1,0 +1,80 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: error-spike-alert
+  datasource:
+    url: jdbc:mysql://localhost:3307/spike?connectionTimeZone=UTC&forceConnectionTimeZoneToSession=true&rewriteBatchedStatements=true&socketTimeout=5000&tcpKeepAlive=true
+    username: spike
+    password: spike
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 10
+      connection-timeout: 2000
+      register-mbeans: true
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+      hibernate.type.preferred_instant_jdbc_type: TIMESTAMP
+  sql:
+    init:
+      mode: always
+      continue-on-error: false
+  data:
+    redis:
+      host: localhost
+      port: 6380
+      timeout: 200ms
+      connect-timeout: 200ms
+  jackson:
+    default-property-inclusion: non_null
+
+spike:
+  admin-token: admin-token
+  policy-cache-refresh-ms: 5000
+  redis-breaker:
+    open-seconds: 5
+  fallback:
+    permits: 8
+    cache-ttl-ms: 1000
+    query-timeout-ms: 1000
+  alert:
+    executor:
+      core-pool-size: 4
+      max-pool-size: 8
+      queue-capacity: 200
+    webhook:
+      connect-timeout-ms: 1000
+      read-timeout-ms: 3000
+      max-retry-after-seconds: 5
+    retry:
+      max-attempts: 3
+      backoff-ms: 500
+      multiplier: 2.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, metrics
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+        error.ingestion.duration: true
+        error.counter.duration: true
+        alert.detection.delay: true
+        database.fallback.duration: true
+        alert.send.duration: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+logging:
+  level:
+    com.seongmin.spike: INFO

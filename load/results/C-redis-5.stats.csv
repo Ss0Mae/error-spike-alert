@@ -1,0 +1,27 @@
+ts,name,cpu_pct,mem
+1788517319,spike-mysql,8.09%,948.9MiB / 3.826GiB
+1788517319,spike-redis,1.36%,4.738MiB / 3.826GiB
+1788517326,spike-mysql,8.60%,948.9MiB / 3.826GiB
+1788517326,spike-redis,1.48%,4.492MiB / 3.826GiB
+1788517333,spike-mysql,10.86%,949.9MiB / 3.826GiB
+1788517333,spike-redis,2.36%,4.746MiB / 3.826GiB
+1788517340,spike-mysql,9.53%,948.8MiB / 3.826GiB
+1788517340,spike-redis,1.31%,4.492MiB / 3.826GiB
+1788517347,spike-mysql,5.67%,949.1MiB / 3.826GiB
+1788517347,spike-redis,1.54%,4.738MiB / 3.826GiB
+1788517354,spike-mysql,8.85%,948.9MiB / 3.826GiB
+1788517354,spike-redis,1.23%,4.738MiB / 3.826GiB
+1788517360,spike-mysql,10.90%,949.6MiB / 3.826GiB
+1788517360,spike-redis,1.49%,4.492MiB / 3.826GiB
+1788517367,spike-mysql,7.89%,949.3MiB / 3.826GiB
+1788517367,spike-redis,2.23%,4.738MiB / 3.826GiB
+1788517374,spike-mysql,14.80%,952.5MiB / 3.826GiB
+1788517374,spike-redis,1.53%,4.742MiB / 3.826GiB
+1788517381,spike-mysql,10.27%,952.1MiB / 3.826GiB
+1788517381,spike-redis,1.70%,4.742MiB / 3.826GiB
+1788517388,spike-mysql,9.35%,954.7MiB / 3.826GiB
+1788517388,spike-redis,2.33%,4.742MiB / 3.826GiB
+1788517396,spike-mysql,8.23%,954.7MiB / 3.826GiB
+1788517396,spike-redis,1.18%,4.75MiB / 3.826GiB
+1788517403,spike-mysql,6.64%,955.4MiB / 3.826GiB
+1788517403,spike-redis,1.61%,4.516MiB / 3.826GiB

@@ -1,0 +1,212 @@
+{
+  "exp": "D",
+  "mode": "cooldown-0",
+  "params": {
+    "policyId": 1,
+    "rate": 100,
+    "startedAt": 1788515139773,
+    "cooldown": 0,
+    "countersBefore": {
+      "alerts_suppressed_total": 29,
+      "cooldown_contention_total": 0,
+      "alerts_detected_total": 6104,
+      "alerts_sent_total": 6104
+    },
+    "duration": "60s",
+    "fingerprint": "k6-d-D21788515139"
+  },
+  "k6": {
+    "durationMs": {
+      "avg": 4.3987089577089655,
+      "p50": 2.927,
+      "p95": 8.48,
+      "p99": 24.82374999999999,
+      "max": 118.141
+    },
+    "requests": 6006,
+    "rps": 95.28926431737855,
+    "failedRate": 0,
+    "droppedIterations": null,
+    "durationMs{expected_response:true}": {
+      "avg": 4.3987089577089655,
+      "p50": 2.927,
+      "p95": 8.48,
+      "p99": 24.82374999999999,
+      "max": 118.141
+    },
+    "res_triggered": {
+      "count": 5973,
+      "rate": 94.76569693101933
+    },
+    "res_suppressed": {
+      "count": 9,
+      "rate": 0.14279110537069714
+    },
+    "res_not_triggered": {
+      "count": 19,
+      "rate": 0.3014478891159162
+    }
+  },
+  "appDelta": {
+    "alerts_detected_total": 5973,
+    "alerts_suppressed_total": 9,
+    "cooldown_contention_total": 0,
+    "alerts_sent_total": 5973
+  },
+  "webhook": {
+    "unique": 5973,
+    "duplicates": 0,
+    "ok": 5973,
+    "total": 5973,
+    "detectionDelayMs": {
+      "count": 5973,
+      "avg": 8.5,
+      "p50": 6,
+      "p95": 15,
+      "p99": 36,
+      "max": 142
+    }
+  },
+  "alertsForFingerprint": [
+    {
+      "id": 12116,
+      "detectedAt": "2026-09-04T09:46:39.773Z",
+      "status": "SENT",
+      "count": 5978,
+      "offsetSec": 60
+    },
+    {
+      "id": 12115,
+      "detectedAt": "2026-09-04T09:46:39.763Z",
+      "status": "SENT",
+      "count": 5977,
+      "offsetSec": 60
+    },
+    {
+      "id": 12114,
+      "detectedAt": "2026-09-04T09:46:39.753Z",
+      "status": "SENT",
+      "count": 5976,
+      "offsetSec": 60
+    },
+    {
+      "id": 12113,
+      "detectedAt": "2026-09-04T09:46:39.743Z",
+      "status": "SENT",
+      "count": 5975,
+      "offsetSec": 60
+    },
+    {
+      "id": 12112,
+      "detectedAt": "2026-09-04T09:46:39.733Z",
+      "status": "SENT",
+      "count": 5974,
+      "offsetSec": 60
+    },
+    {
+      "id": 12111,
+      "detectedAt": "2026-09-04T09:46:39.723Z",
+      "status": "SENT",
+      "count": 5973,
+      "offsetSec": 60
+    },
+    {
+      "id": 12110,
+      "detectedAt": "2026-09-04T09:46:39.713Z",
+      "status": "SENT",
+      "count": 5972,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12109,
+      "detectedAt": "2026-09-04T09:46:39.703Z",
+      "status": "SENT",
+      "count": 5971,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12108,
+      "detectedAt": "2026-09-04T09:46:39.693Z",
+      "status": "SENT",
+      "count": 5970,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12107,
+      "detectedAt": "2026-09-04T09:46:39.683Z",
+      "status": "SENT",
+      "count": 5969,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12106,
+      "detectedAt": "2026-09-04T09:46:39.673Z",
+      "status": "SENT",
+      "count": 5968,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12105,
+      "detectedAt": "2026-09-04T09:46:39.663Z",
+      "status": "SENT",
+      "count": 5967,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12104,
+      "detectedAt": "2026-09-04T09:46:39.653Z",
+      "status": "SENT",
+      "count": 5966,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12103,
+      "detectedAt": "2026-09-04T09:46:39.643Z",
+      "status": "SENT",
+      "count": 5965,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12102,
+      "detectedAt": "2026-09-04T09:46:39.633Z",
+      "status": "SENT",
+      "count": 5964,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12101,
+      "detectedAt": "2026-09-04T09:46:39.623Z",
+      "status": "SENT",
+      "count": 5963,
+      "offsetSec": 59.9
+    },
+    {
+      "id": 12100,
+      "detectedAt": "2026-09-04T09:46:39.613Z",
+      "status": "SENT",
+      "count": 5962,
+      "offsetSec": 59.8
+    },
+    {
+      "id": 12099,
+      "detectedAt": "2026-09-04T09:46:39.603Z",
+      "status": "SENT",
+      "count": 5961,
+      "offsetSec": 59.8
+    },
+    {
+      "id": 12098,
+      "detectedAt": "2026-09-04T09:46:39.593Z",
+      "status": "SENT",
+      "count": 5960,
+      "offsetSec": 59.8
+    },
+    {
+      "id": 12097,
+      "detectedAt": "2026-09-04T09:46:39.583Z",
+      "status": "SENT",
+      "count": 5959,
+      "offsetSec": 59.8
+    }
+  ]
+}

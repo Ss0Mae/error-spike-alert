@@ -1,0 +1,79 @@
+{
+  "exp": "D",
+  "mode": "cooldown-30",
+  "params": {
+    "duration": "10s",
+    "fingerprint": "k6-d-burst1788525604",
+    "policyId": 1,
+    "rate": 1000,
+    "startedAt": 1788525604995,
+    "cooldown": 30,
+    "countersBefore": {
+      "alerts_detected_total": 17810,
+      "alerts_sent_total": 4274,
+      "alerts_suppressed_total": 2,
+      "cooldown_contention_total": 0
+    }
+  },
+  "k6": {
+    "durationMs": {
+      "avg": 2.4484448331001367,
+      "p50": 2.116,
+      "p95": 4.282249999999993,
+      "p99": 6.80095,
+      "max": 19.987
+    },
+    "requests": 10006,
+    "rps": 768.3900048479373,
+    "failedRate": 0,
+    "droppedIterations": null,
+    "durationMs{expected_response:true}": {
+      "avg": 2.4484448331001367,
+      "p50": 2.116,
+      "p95": 4.282249999999993,
+      "p99": 6.80095,
+      "max": 19.987
+    },
+    "res_triggered": {
+      "count": 1,
+      "rate": 0.07679292472995576
+    },
+    "res_suppressed": {
+      "count": 9981,
+      "rate": 766.4701817296884
+    },
+    "res_not_triggered": {
+      "count": 19,
+      "rate": 1.4590655698691595
+    }
+  },
+  "appDelta": {
+    "alerts_detected_total": 1,
+    "alerts_suppressed_total": 9981,
+    "cooldown_contention_total": 9981,
+    "alerts_sent_total": 1
+  },
+  "webhook": {
+    "unique": 1,
+    "duplicates": 0,
+    "ok": 1,
+    "total": 1,
+    "detectionDelayMs": {
+      "count": 1,
+      "avg": 16,
+      "p50": 16,
+      "p95": 16,
+      "p99": 16,
+      "max": 16
+    }
+  },
+  "alertsForFingerprint": [
+    {
+      "id": 61356,
+      "detectedAt": "2026-09-04T12:40:05.015Z",
+      "status": "SENT",
+      "count": 20,
+      "offsetSec": 0
+    }
+  ]
+}

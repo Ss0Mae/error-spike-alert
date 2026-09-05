@@ -1,0 +1,72 @@
+# 인프라만 컨테이너로 띄운다. 앱(backend)은 호스트 JVM에서 ./gradlew bootRun 으로 실행해 측정 오버헤드를 줄인다.
+# 다른 로컬 프로젝트와 포트가 겹치지 않도록 MySQL 3307 / Redis 6380 / Webhook 8091 / Prometheus 9091 / Grafana 3001 을 쓴다.
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: spike-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: spike
+      MYSQL_USER: spike
+      MYSQL_PASSWORD: spike
+      TZ: UTC
+    command:
+      - --innodb_buffer_pool_size=1G
+      - --max_connections=200
+      - --slow_query_log=1
+      - --long_query_time=0.05
+      - --log_output=TABLE
+      - --character-set-server=utf8mb4
+    ports: ["3307:3306"]
+    volumes: ["spike-mysql-data:/var/lib/mysql"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    container_name: spike-redis
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    ports: ["6380:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  mock-webhook:
+    image: node:22-alpine
+    container_name: spike-webhook
+    working_dir: /app
+    command: ["node", "server.js"]
+    environment:
+      PORT: "8091"
+    volumes: ["./mock-webhook:/app:ro"]
+    ports: ["8091:8091"]
+
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    container_name: spike-prometheus
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.retention.time=7d"]
+    volumes: ["./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro"]
+    ports: ["9091:9090"]
+    extra_hosts: ["host.docker.internal:host-gateway"]
+
+  grafana:
+    image: grafana/grafana:11.6.0
+    container_name: spike-grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports: ["3001:3000"]
+    depends_on: [prometheus]
+
+volumes:
+  spike-mysql-data:

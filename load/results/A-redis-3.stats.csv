@@ -1,0 +1,3 @@
+ts,name,cpu_pct,mem
+1788515037,spike-mysql,39.60%,758.2MiB / 3.826GiB
+1788515037,spike-redis,2.78%,2.809MiB / 3.826GiB

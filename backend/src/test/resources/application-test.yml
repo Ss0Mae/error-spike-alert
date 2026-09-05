@@ -1,0 +1,15 @@
+spike:
+  redis-breaker:
+    open-seconds: 2
+  policy-cache-refresh-ms: 1000
+  alert:
+    retry:
+      backoff-ms: 50
+    webhook:
+      connect-timeout-ms: 500
+      read-timeout-ms: 500
+      max-retry-after-seconds: 2
+logging:
+  level:
+    com.seongmin.spike: WARN
+    org.hibernate: WARN

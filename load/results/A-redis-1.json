@@ -1,0 +1,70 @@
+{
+  "exp": "A",
+  "mode": "redis",
+  "params": {
+    "iters": 10,
+    "policyId": 1,
+    "runId": "A11788515035",
+    "threshold": 20,
+    "vus": 3
+  },
+  "k6": {
+    "durationMs": {
+      "avg": 5.253193708609267,
+      "p50": 4.964499999999999,
+      "p95": 7.6957499999999985,
+      "p99": 11.42309,
+      "max": 24.898
+    },
+    "requests": 604,
+    "rps": 544.6544510171693,
+    "failedRate": 0,
+    "droppedIterations": null,
+    "durationMs{expected_response:true}": {
+      "avg": 5.253193708609267,
+      "p50": 4.964499999999999,
+      "p95": 7.6957499999999985,
+      "p99": 11.42309,
+      "max": 24.898
+    },
+    "api_20th_latency": {
+      "avg": 7.560733333333334,
+      "min": 4.942,
+      "med": 7.0625,
+      "max": 12.204,
+      "p(50)": 7.0625,
+      "p(95)": 11.4469,
+      "p(99)": 11.9894
+    },
+    "threshold_triggered": {
+      "count": 30,
+      "rate": 27.052373394892513
+    }
+  },
+  "webhook": {
+    "unique": 28,
+    "duplicates": 0,
+    "detectionDelayMs": {
+      "avg": 15.5,
+      "p50": 15,
+      "p95": 20,
+      "p99": 20,
+      "max": 20,
+      "count": 28
+    },
+    "dispatchDelayMs": {
+      "count": 28,
+      "avg": 15.5,
+      "p50": 15,
+      "p95": 20,
+      "p99": 20,
+      "max": 20
+    }
+  },
+  "app": {
+    "alerts_detected_total": 31,
+    "alerts_sent_total": 29,
+    "alerts_failed_total": 0,
+    "alerts_suppressed_total": 0
+  }
+}

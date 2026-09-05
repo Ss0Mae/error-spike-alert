@@ -1,0 +1,40 @@
+mysql: [Warning] Using a password on the command line interface can be insecure.
+fingerprint	since_utc
+smoke-fp-4	2026-09-04 09:42:50.080
+*************************** 1. row ***************************
+           id: 1
+  select_type: SIMPLE
+        table: error_events
+   partitions: NULL
+         type: ref
+possible_keys: uk_ee_project_event
+          key: uk_ee_project_event
+      key_len: 8
+          ref: const
+         rows: 499178
+     filtered: 0.33
+        Extra: Using where
+*************************** 1. row ***************************
+EXPLAIN: -> Aggregate: count(0)  (cost=14008 rows=1) (actual time=696..696 rows=1 loops=1)
+    -> Filter: ((error_events.fingerprint = <cache>((@fp))) and (error_events.environment = 'PRODUCTION') and (error_events.received_at >= <cache>((@since))))  (cost=13842 rows=1664) (actual time=0.032..696 rows=20 loops=1)
+        -> Index lookup on error_events using uk_ee_project_event (project_id=1)  (cost=13842 rows=499178) (actual time=0.0271..655 rows=1e+6 loops=1)
+
+cnt
+20
+Variable_name	Value
+Handler_read_key	1
+Handler_read_next	1000043
+Handler_read_rnd_next	0
+Innodb_rows_read	7039700
+*************************** 1. row ***************************
+EXPLAIN: -> Aggregate: count(0)  (cost=14008 rows=1) (actual time=416..416 rows=1 loops=1)
+    -> Filter: ((error_events.fingerprint = 'seed-fp-3') and (error_events.environment = 'PRODUCTION') and (error_events.received_at >= <cache>((@since24))))  (cost=13842 rows=1664) (actual time=0.0795..416 rows=4956 loops=1)
+        -> Index lookup on error_events using uk_ee_project_event (project_id=1)  (cost=13842 rows=499178) (actual time=0.039..364 rows=1e+6 loops=1)
+
+cnt_24h
+4956
+Variable_name	Value
+Handler_read_key	1
+Handler_read_next	1000043
+Handler_read_rnd_next	0
+Innodb_rows_read	9039786
